@@ -1,0 +1,7 @@
+@mixin card-size($w,$h,$bdrs:0) {
+    width: $w;
+    height: $h;
+    border: 2px solid #000;
+    background-color: #fa0;
+    border-radius: $bdrs;
+}

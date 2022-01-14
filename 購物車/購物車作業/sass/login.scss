@@ -1,0 +1,41 @@
+
+.login{
+    height: 100vh;
+    .card{
+        background-image: url(https://via.placeholder.com/1920x1080);
+        background-position: center;
+    }
+    .login-title{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background-color: transparent;
+        h1{
+            font-size: 60px;
+        }
+        p{
+            font-size: 30px;
+        }
+    }
+    .card-body{
+        height: 99.8vh;
+        background-color: #162446;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    @media screen and (max-width:1200px) {
+        .login-title{
+            display: none;
+        }
+        .card-body{
+            background-color: transparent;
+        }
+    }
+
+}

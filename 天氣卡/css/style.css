@@ -1,0 +1,281 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+section::before{
+    content:'';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fa0;
+    opacity: .8;
+    clip-path: circle(40% at 100% -20%);
+}
+section::after{
+    content:'';
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    background-color: rgb(180, 237, 241);
+    clip-path: circle(20% at 0% 100%);
+}
+.container{
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 80%;
+    height: 100%;
+}
+.card{
+    position: relative;
+    width: 300px;
+    height: 210px;
+    margin: 40px 40px;
+    background-color: rgba(255,255,255,.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,.2),
+                3px 12px 25px rgba(0,0,0,.2);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+.order-18{
+    /*基隆*/
+    order: 1;
+}
+.order-5{
+    /*台北市*/
+    order: 2;
+}
+.order-1{
+    /*新北市*/
+    order: 3;
+}
+.order-7{
+    /*宜蘭市*/
+    order: 4;
+}
+.order-13{
+    /*桃園市*/
+    order: 4;
+}
+.order-4{
+    /*新竹市*/
+    order: 5;
+}
+.order-3{
+    /*新竹縣*/
+    order: 6;
+}
+.order-8{
+    /*苗栗縣*/
+    order: 6;
+}
+.order-11{
+    /*台中市*/
+    order: 6;
+}
+.order-14{
+    /*南投縣*/
+    order: 6;
+}
+.order-20{
+    /*彰化縣*/
+    order: 6;
+}
+.order-10{
+    /*花蓮*/
+    order: 7;
+}
+.order-9{
+    /*雲林縣*/
+    order: 8;
+}
+.order-0{
+    /*嘉義縣*/
+    order: 9;
+}
+.order-2{
+    /*嘉義市*/
+    order: 9;
+}
+.order-6{
+    /*台南市*/
+    order: 9;
+}
+.order-15{
+    /*高雄市*/
+    order: 9;
+}
+.order-17{
+    /*屏東縣*/
+    order: 9;
+}
+.order-12{
+    /*台東縣*/
+    order: 10;
+}
+.order-16{
+    /*金門縣*/
+    order: 10;
+}
+.order-19{
+    /*澎湖縣*/
+    order: 10;
+}
+.order-21{
+    /*連江縣*/
+    order: 10;
+}
+.card-img{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    transition: .5s;
+}
+.card-info{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.398);
+}
+.card-info h3{
+    color: #333;
+    font-size: 30px;
+    font-weight: 1000;
+    text-align: center;
+    margin: 10px 0;
+    transition: .5s;
+}
+.card-info h4{
+    margin: 15px 0;
+    text-align: center;
+}
+.card-info #comfort{
+    display: block;
+    text-align: center;
+    background-color: rgba(183, 240, 186, 0.837);
+}
+.card:hover{
+    height: 450px;
+}
+.card:hover h3{
+    color: #fff;
+    background-color: #000;
+}
+.card:hover h4 span{
+    font-size: 30px;
+    color: #333;
+}
+.card:hover .card-img{
+    transform: translateY(15px)scale(1.5);
+}
+:root {
+    --color_white: rgb(243, 243, 243);
+    --color_yellow: #FFD633;
+    --color_black: #333;
+    --color_blue_start: #173259;
+    --color_blue_end: #92d2f5;
+    --color_rain: #4DACFF;
+    --color_white_cloud: rgb(242, 249, 254);
+    --color_grey_cloud: #ccc;
+}
+.sunny {
+    width: 150px;
+    height: 150px;
+    fill: rgba(255, 214, 51, 1);
+    
+}
+.sunny-1{
+    transform:translate(70%,-30%)rotate(45deg);
+    fill: rgba(255, 214, 51, 1);
+    background-color: rgba(255, 214, 51, 1);
+}
+#sun {
+    fill: rgb(255, 214, 51, 1);
+    stroke: rgba(255, 51, 51, 0.5);
+}
+.cloudy_sunny {
+    width: 150px;
+    height: 150px;
+}
+.cloudy_sunny rect{
+    fill: rgb(255, 214, 51, 1);
+}
+.cloudy {
+    width: 150px;
+    height: 150px;
+}
+#cloud {
+    fill: rgb(242, 249, 254);
+}
+#cloud2 {
+    fill: rgb(225, 241, 252);
+}
+.overcast {
+    width: 150px;
+    height: 150px;
+}
+#overcast_cloud {
+    fill: rgb(209, 209, 209);
+}
+#overcast_cloud2 {
+    fill: rgb(150, 146, 146);
+}
+.rainy {
+    width: 150px;
+    height: 150px;
+}
+.rainy_thunder{
+    width: 150px;
+    height: 150px;
+}
+#rain {
+    fill: rgb(221, 234, 247);
+}
+#thunder{
+    fill: rgba(255, 214, 51, 1);
+    stroke:rgba(255, 214, 51, 1);
+    stroke-width: 1;
+}
+button{
+    display: block;
+    background-color: rgba(0, 255, 166, 0.686);
+    color: #555;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: 900;
+}
+button:hover{
+    color: #fff;
+    background-color: #fa0;
+}
+#return-btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+}

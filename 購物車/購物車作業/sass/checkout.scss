@@ -1,0 +1,50 @@
+#cart{
+    background-color:  #D1D5DB;
+    .progerss-block{
+        //border: solid 1px #888;
+        .progress{
+            top: 25%;
+            left: 65%;
+            width: 70%;
+            height: 10px;
+        }
+        
+        .step{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            &.active{
+                background-color: #108981;
+                color: #fff;
+            }
+        }
+    }
+    .order{
+        label{
+            font-size: 20px;
+        }
+    }
+    .product-clac{
+        .calc-qty{
+            .count-btn{
+                width: 30px;
+                height: 30px;
+                background-color: #eee;
+                border: none;
+                border-radius: 50%;
+                text-align: center;
+            }
+            .count-number{
+                width: 80px;
+            }
+        }
+    }
+}
+
+.total-calc.w-25{
+    span{
+        font-weight: 900;
+    }
+}
