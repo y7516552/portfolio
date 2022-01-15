@@ -50,7 +50,7 @@ section::after{
     height: 100%;
 }
 .card{
-    position: relative;
+    
     width: 300px;
     height: 210px;
     margin: 40px 40px;

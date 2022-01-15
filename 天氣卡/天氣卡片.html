@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>天氣卡片 檢討</title>
     <link rel="stylesheet" href="./css/style.css">
+    
 </head>
 <body>
 <section>
@@ -13,7 +14,16 @@
         <button id="show-btn" >台灣天氣預報</button>
     </div>
 </section>
+<script type="text/javascript" src="/天氣卡/js/vanilla-tilt.min.js"></script>
+
     <script>
+        VanillaTilt.init(document.querySelector("#show-btn"), {
+            max: 25,
+            speed: 400
+        });
+        VanillaTilt.init(document.querySelectorAll("#show-btn"));
+    
+
         let x=['臺北市', '新北市', '基隆市', '宜蘭縣', '桃園市', '新竹縣', '新竹市', '苗栗縣', '臺中市', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '嘉義市', '臺南市', '高雄市', '屏東縣', '花蓮縣', '臺東縣', '連江縣', '金門縣', '澎湖縣']
         let containerEle =document.querySelector('.container') ;
         let cardimgEle =document.querySelector('.card-img');
@@ -84,7 +94,8 @@
                     }else if(wxValne <= 13){
                         weatherImg= thunderIcon;
                     }
-                    content +=`<div class="card order-${i}">
+                    content +=`<div class="box">
+                                <div class="card order-${i}" data-tilt  data-tilt-scale="1.1">
                                     <div class="card-img"> ${weatherImg}</div>
                                         <div class="card-info">
                                             <h3>${data['records']['location'][i]['locationName']}</h3>
@@ -94,13 +105,22 @@
                                             <span id="comfort">${comfort}</span>
                                         </div>
                                     </div>
-                                </div>`;
+                                </div>
+                            </div>`;
                     containerEle.innerHTML = content ;
+                    
                 }
                 containerEle.innerHTML +='<button id="return-btn" onclick="reset()">回到上一頁</button>';
-                
+
+                VanillaTilt.init(document.querySelector(".card"), {
+                        max: 25,
+                        speed: 700
+                    });
+                    VanillaTilt.init(document.querySelectorAll(".card"));
             })
             
+
+
         })
 
         function reset(){
@@ -108,6 +128,10 @@
         }
         
         
+        
+    </script>
+   
+    <script>
         
     </script>
 </body>
