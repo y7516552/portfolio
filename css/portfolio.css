@@ -130,7 +130,7 @@ h3 {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-image: url("/img/a-1.JPG");
+  background-image: url("./img/a-1.JPG");
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.5);
@@ -149,8 +149,11 @@ h3 {
 }
 
 #skill {
-  height: 150vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-color: #e9e9efee;
+  padding-bottom: 50px;
 }
 
 #skill .container-fluid {
@@ -287,6 +290,10 @@ h3 {
   #skill .container-fluid {
     width: 100vw;
   }
+}
+
+#portfolio {
+  margin-top: 50px;
 }
 
 #portfolio .container.w-75 .row .col-12.col-md-6.col-xl-4 .card {
