@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 50px;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+        .card{
+            width: 300px;
+            height: 450px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            align-items: center;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .img{
+            width: 100%;
+            height: 60%;
+            background-color: aliceblue;
+            border-radius: 5px 5px 0 0;
+        }
+        .county-name{
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .temperature{
+            display: flex;
+        }
+        .min-t{
+            color:rgb(38, 153, 206);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="img"></div>
+            <div class="county-name">台北市</div>
+            <div class="wx">晴時多雲</div>
+            <div class="temperature">
+                <div class="max-t">36°C</div>｜
+                <div class="min-t">2°C</div>
+            </div>
+            <div class="ci">寒冷至舒適</div>
+            <div class="pop">降雨機率:10%</div>
+        </div>
+        
+    </div>
+    
+    <script>
+        const url = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-7EC08C0F-C5F2-478D-84D4-702FCF71511C';
+        const counties = ['臺北市', '新北市', '基隆市', '宜蘭縣', '桃園市', '新竹縣', '新竹市', '苗栗縣', '臺中市', '彰化縣', '南投縣', '雲林縣', '嘉義縣', '嘉義市', '臺南市', '高雄市', '屏東縣', '花蓮縣', '臺東縣', '連江縣', '金門縣', '澎湖縣'];
+        // get
+        fetch(url)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            // 取出所有縣市的資料
+            let locations = data['records']['location'];
+            // 建立一個存放整理後資料的物件
+            let weatherData = {};
+            // 利用forEach將各縣市資料取出
+            locations.forEach(function (location) {
+                // 以縣市名稱為key，進行初始化
+                weatherData[location['locationName']] = {};
+                // 取出所有天氣因子
+                let weatherElements = location['weatherElement'];
+                let y = weatherElements[0]['time'][0]['parameter']['parameterValue']
+                console.log(y);
+                // 利用forEach將各因子取出
+                weatherElements.forEach(function (weatherElement) {
+                    // 將各因子資料存入物件中
+                    // weatherData[縣市名稱][因子名稱] = 資料
+                    // let wxValne= data['records']['location'][i]['weatherElement'][0]['time'][0]['parameter']['parameterValue'];
+                    // let wvEles = weatherElement['time'][0]['parameter']['parameterValue'];
+                    
+                    weatherData[location['locationName']][weatherElement['elementName']] = weatherElement['time'][0]['parameter']['parameterName'];
+                    weatherData[location['locationName']][weatherElement['elementName'][1]]=y;
+                });
+            });
+            console.log(weatherData);
+
+            const containerElement = document.querySelector('.container');
+            let cards = '';
+            counties.forEach(function (county) {
+                
+                cards += `
+                <div class="card">
+                    <div class="img">${weatherData[county]['I']}</div>
+                    <div class="county-name">${county}</div>
+                    <div class="wx">${weatherData[county]['Wx']}</div>
+                    <div class="temperature">
+                        <div class="max-t">${weatherData[county]['MaxT']}°C</div>｜
+                        <div class="min-t">${weatherData[county]['MinT']}°C</div>
+                    </div>
+                    <div class="ci">${weatherData[county]['CI']}</div>
+                    <div class="pop">降雨機率:${weatherData[county]['PoP']}%</div>
+                </div>`;
+            });
+            containerElement.innerHTML = cards;
+        });
+
+
+    </script>
+</body>
+</html>

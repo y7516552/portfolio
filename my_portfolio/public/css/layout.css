@@ -1,0 +1,82 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+:root {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+h3 {
+  font-weight: 900;
+  font-size: 35px;
+}
+
+.navbar {
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  background-color: #eee;
+}
+
+.navbar #nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: end;
+      align-content: end;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+footer .container-full {
+  background-color: #999;
+}
+
+footer .container-full .footer-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+footer .container-full .footer-links a {
+  margin: 15px;
+  font-size: 39px;
+  line-height: 40px;
+  color: #000;
+  text-decoration: none;
+}
+
+footer .container-full .footer-links a:nth-child(2) svg {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+}
+
+footer .container-full .footer-links a:last-child {
+  position: absolute;
+  right: 15px;
+}

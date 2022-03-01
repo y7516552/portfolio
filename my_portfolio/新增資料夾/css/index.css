@@ -1,0 +1,100 @@
+#service .container-fluid.w-75.mt-5 .row.mt-5.mb-5 .col-4 .title-h3 {
+  font-size: 28px;
+  position: relative;
+}
+
+#service .container-fluid.w-75.mt-5 .row.mt-5.mb-5 .col-4 .title-h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  background-color: #fa0;
+  width: 40%;
+  height: 4px;
+  border-radius: 10px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  margin-bottom: 86px;
+}
+
+.container {
+  margin-bottom: 50px;
+}
+
+.container-fluid.w-75 .row .col.mt-5 .mycard .img {
+  width: 80px;
+  height: 80px;
+  color: #6366f1;
+  background-color: #e0e7ff;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-fluid.w-75 .row .col.mt-5 .mycard .img svg {
+  width: 40px;
+  height: 40px;
+}
+
+.container-fluid.w-75 .row .col.mt-5 .mycard a {
+  color: rgba(99, 102, 241, 0);
+}
+
+#product .card-comment .five-star .star {
+  width: 15px;
+  height: 15px;
+}
+
+#product .color-label {
+  margin: 0 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+
+#product .color-label .color-radio {
+  opacity: 0;
+}
+
+#map {
+  position: relative;
+}
+
+#map .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#map .container .feedback {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+/*# sourceMappingURL=index.css.map */
